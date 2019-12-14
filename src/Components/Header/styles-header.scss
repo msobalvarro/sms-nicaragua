@@ -1,0 +1,59 @@
+header.header-component {
+    .carousel {
+        img {
+            height: 500px;
+            object-fit: cover;
+        }
+    }
+
+    nav {
+        background-color: #a11e4a;
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        height: 80px;
+        padding: 0 1em;
+
+        div.logo {
+            height: 50px;
+            display: flex;
+
+            .sms {
+                align-items: center;
+                background-color: #6b0929;
+                border-radius: 5px 0 0 5px;
+                color: #FFF;
+                display: flex;
+                justify-content: center;
+                padding: 0 10px;
+                font-size: 2em;
+            }
+
+            .description {
+                align-items: center;
+                border: 2px solid #6b0929;
+                border-radius: 0 5px 5px 0;
+                color: #FFF;
+                display: flex;
+                padding: 10px;
+                justify-content: center;
+            }
+        }
+
+        div.list {
+            display: flex;
+
+            a {
+                border-radius: 3px;
+                color: #FFF;
+                text-decoration: none;
+                transition: all 0.2s ease;
+                padding: 10px;
+
+                &:hover {
+                    background-color: rgba(0, 0, 0, 0.2);
+                }
+            }
+        }
+    }
+}
