@@ -13,30 +13,31 @@ import ImageOne from '../../Static/baner/image-1.png'
 import ImageTwo from '../../Static/baner/image-2.png' 
 import ImageThree from '../../Static/baner/image-3.png' 
 import ImageFour from '../../Static/baner/image-4.png' 
+import { Directions } from '../Directions'
 
 const Header = () => {
-    const directions = [
-        {
-            text: 'PRINCIPAL',
-            to: '#'
-        },
-        {
-            text: 'NUESTRA FIRMA',
-            to: '#'
-        },
-        {
-            text: 'SERVICIOS',
-            to: '#'
-        },
-        {
-            text: 'CONTÁCTENOS',
-            to: '#'
-        },
-    ]
-
     return (
         <header className="header-component">
-            <Carousel autoPlay infiniteLoop={true} interval={5000} showThumbs={false} showThumbs={false}>
+            <nav>
+                <div className='logo'>
+                    <div className='sms'>
+                        <span>SMS</span>
+                    </div>
+                    <div className='description'>
+                        <span>Latinoamerica</span>
+                    </div>
+                </div>
+
+                <div className='list'>
+                    {
+                        Directions.map(
+                            ({ text, to, active }, index = 0) => <Link className={active && 'active'} key={index} to={to}>{text}</Link>
+                        )
+                    }
+                </div>
+            </nav>
+
+            <Carousel autoPlay infiniteLoop={true} showStatus={false} interval={5000} showThumbs={false} showThumbs={false}>
                 <div>
                     <img src={ImageOne} />
                 </div>
@@ -53,25 +54,6 @@ const Header = () => {
                     <img src={ImageFour} />
                 </div>
             </Carousel>
-
-            <nav>
-                <div className='logo'>
-                    <div className='sms'>
-                        <span>SMS</span>
-                    </div>
-                    <div className='description'>
-                        <span>Latinoamerica</span>
-                    </div>
-                </div>
-
-                <div className='list'>
-                    {
-                        directions.map(
-                            ({ text, to }, index = 0) => <Link key={index} to={to}>{text}</Link>
-                        )
-                    }
-                </div>
-            </nav>
         </header>
     )
 }

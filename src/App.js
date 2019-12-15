@@ -5,15 +5,16 @@ import {
   Route,
 } from 'react-router-dom'
 
-// Import Views
-import Index from './Views/Index/Index'
-
 // Components
 import Header from './Components/Header/Header'
 
 // Import global styles
 import './App.scss'
 import Footer from './Components/Footer/Footer'
+
+// Import Views
+import Index from './Views/Index/Index'
+import Firm from './Views/Firm/Firm'
 
 function App() {
   return (
@@ -24,6 +25,10 @@ function App() {
         <Switch>
           <Route path="/">
             <Index />
+          </Route>
+
+          <Route path="/firm">
+            <Firm />
           </Route>
         </Switch>
 
